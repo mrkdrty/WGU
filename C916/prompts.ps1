@@ -16,6 +16,7 @@ try
             {
             # Writes files with .log extensions in the present workding directory
             'Writing Log Files to  DailyLog.txt'
+            date >> DailyLog.txt
             ls *.log . >> DailyLog.txt
             }
             2 
