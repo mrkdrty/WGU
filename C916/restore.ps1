@@ -1,7 +1,12 @@
 # Author: Stephen Henderson, Student ID: #000815615
 try
 {
-    #New-AdOrganizationalUnit -Name "finance"
+    $FinanceOU='OU=finance,DC=ucertify,dc=com'
+    if (Get-AdOrganizationalUnit -Filter "distinguisedName -eq '$FinanceOU'") {
+      Write-Host "WARN: finance OU already exists"
+    } else {
+      New-AdOrganizationalUnit -Name "finance"
+    }
 	$ADUsers = Import-csv .\financePersonnel.csv
 	foreach ($User in $ADUsers)
 	{
