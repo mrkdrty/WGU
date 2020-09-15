@@ -25,6 +25,7 @@ try
 	-DisplayName "$Firstname $Lastname" `
 	-OfficePhone $OfficePhone `
 	-MobilePhone $MobilePhone `
+	-PostalCode $PostalCode `
         -Path "OU=finance,dc=ucertify,dc=com" 
 	}
     #Assign Variables to SQL Server, Database Name and Table Name
